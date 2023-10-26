@@ -79,6 +79,14 @@ namespace Task
                                 Employee employeeTo = item;
                             }
                         }
+                        for (int i = 0;i < Employees.Count; i++)
+                        {
+                            if (Employees[i].GetID() == IDTo)
+                            {
+                                Console.Write("Введите задание: ");
+                                Employees[i].AddTask(Console.ReadLine());
+                            }
+                        }
                         Console.Write("Для продолжение нажмите любую клавишу: ");
                         Console.ReadKey();
                         Console.Clear();
