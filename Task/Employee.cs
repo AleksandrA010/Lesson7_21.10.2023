@@ -22,7 +22,6 @@ namespace Task
         private int access;
         private int ID;
         private static int id = 0;
-        private int key = 02050;
         private List<string> CurrentTasks = new List<string>();
         public Employee(string name, Departments department, int ID)
         {
@@ -132,7 +131,7 @@ namespace Task
         {
             Console.WriteLine($"Имя — {name}");
             Console.WriteLine($"Отдел — {department}");
-            Console.WriteLine($"ID — #{key}{ID}");
+            Console.WriteLine($"ID — #{ID}");
             Console.WriteLine($"Точка доступа — {access}");
             Console.WriteLine("Текущие задачи:\n");
             PrintTasks(CurrentTasks);
@@ -140,6 +139,10 @@ namespace Task
         public void AddTask(string Task) 
         {
             CurrentTasks.Add(Task);
+        }
+        public int GetAccess()
+        {
+            return access;
         }
         public static int NewID()
         {

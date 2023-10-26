@@ -22,8 +22,6 @@ namespace Task
             bool flag = true;
             string name;
             string department;
-            Employee employeeFrom;
-            Employee employeeTo;
             var Employees = new List<Employee>();
             Employees.Add(new Employee("Tom", Departments.Development, Employee.NewID()));
             Employees.Add(new Employee("Beer", Departments.SystemsAnalyst, Employee.NewID()));
@@ -66,19 +64,19 @@ namespace Task
                         {
                             Employees[i].PrintEmployee();
                         }
-                        Console.Write("Введите ID сотрудника, который даёт задание: ");
+                        Console.Write("Введите ID без '#' сотрудника, который даёт задание: ");
                         int IDFrom = int.Parse(Console.ReadLine());
-                        Console.Write("Введите ID сотрудника, который получает задание: ");
+                        Console.Write("Введите ID без '#' сотрудника, который получает задание: ");
                         int IDTo = int.Parse(Console.ReadLine());
                         foreach (var item in Employees)
                         {
                             if (item.GetID() == IDFrom)
                             {
-                                employeeFrom = item;
+                                Employee employeeFrom = item;
                             }
                             else if (item.GetID() == IDTo)
                             {
-                                employeeTo = item;
+                                Employee employeeTo = item;
                             }
                         }
                         Console.Write("Для продолжение нажмите любую клавишу: ");
@@ -102,7 +100,7 @@ namespace Task
                         {
                             Employees[i].PrintEmployee();
                         }
-                        Console.Write("Введите ID сотрудника, которого хотите удалить: ");
+                        Console.Write("Введите ID без '#' сотрудника, которого хотите удалить: ");
                         int IDDelete = int.Parse(Console.ReadLine());
                         foreach (var item in Employees)
                         {
