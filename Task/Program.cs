@@ -62,6 +62,10 @@ namespace Task
                         Console.Clear();
                         break;
                     case "setTask":
+                        for (int i = 0; i < Employees.Count; i++)
+                        {
+                            Employees[i].PrintEmployee();
+                        }
                         Console.Write("Введите ID сотрудника, который даёт задание: ");
                         int IDFrom = int.Parse(Console.ReadLine());
                         Console.Write("Введите ID сотрудника, который получает задание: ");
@@ -94,6 +98,10 @@ namespace Task
                         Console.Clear();
                         break;
                     case "deleteEmployee":
+                        for (int i = 0; i < Employees.Count; i++)
+                        {
+                            Employees[i].PrintEmployee();
+                        }
                         Console.Write("Введите ID сотрудника, которого хотите удалить: ");
                         int IDDelete = int.Parse(Console.ReadLine());
                         foreach (var item in Employees)
@@ -101,6 +109,7 @@ namespace Task
                             if (item.GetID() == IDDelete)
                             {
                                 Employees.Remove(item);
+                                break;
                             }
                         }
                             Console.Write("Для продолжение нажмите любую клавишу: ");
